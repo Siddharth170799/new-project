@@ -4,6 +4,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import axios from "axios";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import { Link } from "react-router-dom";
 
 
 
@@ -50,6 +54,21 @@ let handleCart = ()=>{
 
 
 return (
+
+  <>
+
+<Navbar bg="dark" data-bs-theme="dark">
+        <Container>
+          <Navbar.Brand href="#home">Fashion Street</Navbar.Brand>
+          <Nav className="me-auto">
+            <Link to={"/products"}>
+            <Nav.Link href="#home" style={{textDecoration:"none"}}>Home</Nav.Link></Link>
+            
+          </Nav>
+        </Container>
+      </Navbar>
+
+
     <div style={{textAlign:"center"}}>
     <Card style={{ width: '18rem' , textAlign:"center"}}>
     <Card.Img variant="top" src={data?.image} />
@@ -63,7 +82,7 @@ return (
   </Card>
 
   </div>
-
+  </>
 
 )
 

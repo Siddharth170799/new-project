@@ -34,7 +34,7 @@
 
 // export default Cart
 
-import React,s { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 
 const Cart=()=>{
