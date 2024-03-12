@@ -6,31 +6,37 @@ const Cart=()=>{
 const [items,setItems]=useState([])
 
 
-
 useEffect(()=>{
-  const storedItems = localStorage.getItem('products');
-    
-    if (storedItems) {
 
-      const parsedItems = JSON.parse(storedItems);
-      setItems(parsedItems);}
+const getitems=localStorage.getItem("products")
+const getitems2=JSON.parse(getitems)
+if(getitems2){
+
+// const getitems2=JSON.parse(getitems)
+setItems(getitems2)
+
+}
 
 },[])
 
 
-return (
-  <div>
-    <h1>Items from Local Storage</h1>
-    <ul>
-      {items.map((item) => (
-        <li>{item.title}</li>
+return(
+
+<>
+<div>
+   <h1>Items from Local Storage</h1>
+     <div className="hello">
+     {items.map((item) => (
+        <li >{item.title}</li>
       ))}
-    </ul>
+    </div>
   </div>
-);
+
+</>
+
+)
 
 
 }
 
 export default Cart
-

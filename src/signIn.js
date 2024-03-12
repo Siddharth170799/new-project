@@ -31,11 +31,11 @@ if(getval2.Email == data && getval2.Password == data2){
 return (
 
     <>
-
-    <div style={{textAlign:"center"}}><label>Email</label><input type="text" onChange={(e)=>setData(e.target.value)}/></div>
-    <div style={{textAlign:"center"}}><label>Password</label><input type="text" onChange={(e)=>setData2(e.target.value)}/></div>
-    <div style={{textAlign:"center"}}><button onClick={Click2}>Click To Submit</button></div>
-
+<div className="hello" style={{margin:"300px"}}>
+    <div style={{textAlign:"center",margin:"15px"}}><label>Email</label><input type="text" onChange={(e)=>setData(e.target.value)}/></div>
+    <div style={{textAlign:"center",margin:"15px"}}><label>Password</label><input type="text" onChange={(e)=>setData2(e.target.value)}/></div>
+    <div style={{textAlign:"center",margin:"15px"}}><button onClick={Click2}>Click To Submit</button></div>
+    </div>
     </>
 
 

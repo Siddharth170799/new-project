@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 
 
 
+
 const Part=()=>{
 
 
@@ -34,21 +35,21 @@ useEffect(()=>{
 },[])
 
 let productsFromStore = JSON.parse(localStorage.getItem('products'))||[] 
-let handleCart = ()=>{
+// let handleCart = ()=>{
 
-       let existingProduct =  productsFromStore.find((product)=>{
-            return product.id===data.id
-        })
+//        let existingProduct =  productsFromStore.find((product)=>{
+//             return product.id===data.id
+//         })
 
-        if(existingProduct){
-            return 
-        }
-        productsFromStore.push(data)
+//       //   if(existingProduct){
+//       //     return 
+//       // }
+//         productsFromStore.push(data)
 
-        localStorage.setItem("products",JSON.stringify(productsFromStore))
-        navigate("/cart")
+//         localStorage.setItem("products",JSON.stringify(productsFromStore))
+//         navigate("/cart")
         
-}
+// }
 
 
 
@@ -62,7 +63,8 @@ return (
           <Navbar.Brand href="#home">Fashion Street</Navbar.Brand>
           <Nav className="me-auto">
             <Link to={"/products"}>
-            <Nav.Link href="#home" style={{textDecoration:"none"}}>Home</Nav.Link></Link>
+            <Nav.Link href="#home" style={{textDecoration:"none",fontSize:"20px",color:"white",marginLeft:"50px"}}>Home</Nav.Link></Link>
+            <img src="https://www.pngall.com/wp-content/uploads/5/Shopping-Cart-PNG-Image-HD.png" style={{height:"30px",width:"30px",margin:"15px"}}></img>
             
           </Nav>
         </Container>
@@ -77,7 +79,8 @@ return (
       <Card.Text>
        {data?.description}
       </Card.Text>
-      <Button onClick={handleCart} variant="primary">Go somewhere</Button>
+      
+      {/* <Button onClick={handleCart} variant="primary">Add to Cart</Button> */}
     </Card.Body>
   </Card>
 

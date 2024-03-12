@@ -8,6 +8,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addItem } from "./createSlice";
 
 
 
@@ -18,7 +20,7 @@ const Products=()=>{
 
     const [data,setData]=useState("")
 
-
+    const dispatch = useDispatch()
     const fetch=async()=>{
 
      const url=await axios.get("https://fakestoreapi.com/products/")
@@ -38,6 +40,7 @@ return (
         <Container>
           <Navbar.Brand href="#home">Fashion Street</Navbar.Brand>
           <Nav className="me-auto">
+            {/* <img src="https://www.pngall.com/wp-content/uploads/5/Shopping-Cart-PNG-Image-HD.png" style={{height:"30px",width:"30px"}}></img> */}
             
           </Nav>
         </Container>
@@ -61,8 +64,9 @@ return (
         <Card.Text>
           {item?.description.slice(0,50)}
         </Card.Text>
-        <Link to={`/products/${item.id}`}>
-        <Button variant="primary">Go somewhere🛒</Button></Link>
+        {/* <Link to={`/products/${item.id}`}> */}
+        <Button onClick={()=>dispatch(addItem(item))} variant="primary">AddToCart🛒</Button>
+        {/* </Link> */}
       </Card.Body>
     </Card>
         
